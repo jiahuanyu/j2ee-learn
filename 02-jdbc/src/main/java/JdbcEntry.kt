@@ -7,7 +7,7 @@ fun main() {
     var preparedStatement: PreparedStatement? = null
 
     try {// 获取mysql中j2ee-learn数据库的链接
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee-learn", "root", "root1234")
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee-learn?useUnicode=true&characterEncoding=UTF-8", "root", "root1234")
 
         // 创建表
         val createTableSql = """
