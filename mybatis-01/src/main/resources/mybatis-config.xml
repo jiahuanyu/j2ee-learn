@@ -26,6 +26,6 @@
     </environments>
 
     <mappers>
-        <mapper resource="me/jiahuan/java/mybatis/UserDao.xml"/>
+        <mapper resource="me/jiahuan/java/mybatis/dao/UserDaoMapper.xml"/>
     </mappers>
 </configuration>
