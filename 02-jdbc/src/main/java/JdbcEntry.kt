@@ -17,7 +17,7 @@ fun main() {
                 PRIMARY KEY (`uid`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         """.trimIndent()
-        preparedStatement = connection.prepareCall(createTableSql)
+        preparedStatement = connection.prepareStatement(createTableSql)
         preparedStatement.execute()
         preparedStatement.close()
 
@@ -25,7 +25,7 @@ fun main() {
         val insertSql = """
             INSERT INTO `user` (`name`) values (?)
         """.trimIndent()
-        preparedStatement = connection.prepareCall(insertSql)
+        preparedStatement = connection.prepareStatement(insertSql)
         preparedStatement.setString(1, "wdnmd")
         val rowAffect = preparedStatement.executeUpdate()
         println("rowAffect = $rowAffect")
