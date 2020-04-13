@@ -1,29 +1,15 @@
-### JavaWeb
-
 #### Servlet
 
-- 实现流程
+- 实现
 
-  - 新建Class类，并集成自HttpServlet，使用注解标明这是个Servlet
-
-    ```kotlin
-    @WebServlet("/test")
-    class TestServlet : HttpServlet()
-    ```
-
-  - 如果未使用注解，则在web.xml中配置
-
-    ```xml
-    <servlet>
-      <servlet-name>test</servlet-name>
-      <servlet-class>me.jiahuan.java.web.TestServlet</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-      <servlet-name>test</servlet-name>
-      <url-pattern>/test</url-pattern>
-    </servlet-mapping>
-    ```
+  ```kotlin
+  @WebServlet(urlPatterns = ["/test"])
+  class TestServlet : HttpServlet() {
+      override fun service(req: HttpServletRequest?, resp: HttpServletResponse?) {
+          println("TestServlet")
+      }
+  }
+  ```
 
 - 请求转发
 
@@ -40,3 +26,46 @@
   ```
 
   整个过程是两个请求，两个响应
+
+#### Filter
+
+```kotlin
+@WebFilter(urlPatterns = ["*"], initParams = [WebInitParam(name = "test", value = "初始值")])
+class TestFilter : Filter {
+    override fun init(filterConfig: FilterConfig?) {
+        println("TestFilter init")
+        val initValue = filterConfig?.getInitParameter("test")
+        println("initValue = $initValue")
+    }
+
+    override fun doFilter(req: ServletRequest?, resp: ServletResponse?, chain: FilterChain?) {
+        println("TestFilter doFilter")
+        resp?.contentType = "text/html;charset=UTF-8";
+        resp?.characterEncoding = "UTF-8";
+
+        chain?.doFilter(req, resp)
+    }
+
+    override fun destroy() {
+        println("TestFilter destroy")
+    }
+}
+```
+
+#### Listener
+
+```kotlin
+@WebListener
+class TestListener : HttpSessionListener, HttpSessionAttributeListener, ServletRequestListener, ServletRequestAttributeListener, ServletContextAttributeListener {
+    override fun requestInitialized(sre: ServletRequestEvent?) {
+        println("requestInitialized")
+    }
+
+    override fun requestDestroyed(sre: ServletRequestEvent?) {
+        println("requestDestroyed")
+    }
+}	
+```
+
+
+
