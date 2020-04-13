@@ -11,5 +11,6 @@
 
     <modules>
         <module>01-java-web</module>
+        <module>02-jdbc</module>
     </modules>
 </project>
