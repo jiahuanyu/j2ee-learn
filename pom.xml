@@ -12,5 +12,6 @@
     <modules>
         <module>01-java-web</module>
         <module>02-jdbc</module>
+        <module>03-mybatis</module>
     </modules>
 </project>
