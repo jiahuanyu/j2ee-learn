@@ -1,4 +1,4 @@
-package me.jiahuan.java.mybatis.dao
+package me.jiahuan.java.mybatis.repository
 
 import me.jiahuan.java.mybatis.utils.MyBatisUtils
 import org.junit.Test
