@@ -13,7 +13,7 @@ fun main() {
         val createTableSql = """
             CREATE TABLE IF NOT EXISTS `user` (
                 `uid` int(11) NOT NULL AUTO_INCREMENT,
-                `name` varchar(10) DEFAULT NULL,
+                `name` varchar(10) NOT NULL,
                 PRIMARY KEY (`uid`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         """.trimIndent()
