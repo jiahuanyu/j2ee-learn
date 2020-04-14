@@ -6,6 +6,10 @@
 
     <properties resource="db.properties"/>
 
+    <typeAliases>
+        <package name="me.jiahuan.java.mybatis.pojo" />
+    </typeAliases>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -29,6 +33,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="me/jiahuan/java/mybatis/repository/UserMapper.xml"/>
+        <!--        <mapper resource="me/jiahuan/java/mybatis/repository/UserMapper.xml"/>-->
+        <package name="me.jiahuan.java.mybatis.repository" />
     </mappers>
 </configuration>
