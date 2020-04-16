@@ -1,0 +1,4 @@
+rootProject.name = 'j2ee-learn'
+include 'java-web-01'
+include 'jooq-01'
+
