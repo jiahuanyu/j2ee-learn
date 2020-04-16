@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.annotation.Generated;
 
+import me.jiahuan.java.converter.GenderEnumConverter;
+import me.jiahuan.java.enums.Gender;
 import me.jiahuan.java.model.Indexes;
 import me.jiahuan.java.model.J2eeLearn;
 import me.jiahuan.java.model.Keys;
@@ -41,7 +43,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class User extends TableImpl<UserRecord> {
 
-    private static final long serialVersionUID = 1520527184;
+    private static final long serialVersionUID = -922858206;
 
     /**
      * The reference instance of <code>j2ee-learn.user</code>
@@ -65,6 +67,11 @@ public class User extends TableImpl<UserRecord> {
      * The column <code>j2ee-learn.user.name</code>.
      */
     public final TableField<UserRecord, String> NAME = createField("name", org.jooq.impl.SQLDataType.VARCHAR(10).nullable(false), this, "");
+
+    /**
+     * The column <code>j2ee-learn.user.gender</code>.
+     */
+    public final TableField<UserRecord, Gender> GENDER = createField("gender", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "", new GenderEnumConverter());
 
     /**
      * Create a <code>j2ee-learn.user</code> table reference

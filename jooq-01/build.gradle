@@ -46,6 +46,10 @@ jooq {
             // 默认是 JavaGenerator
             name = 'org.jooq.codegen.DefaultGenerator'
 
+//            strategy {
+//                name = 'me.jiahuan.java.strategy.JooqGeneratorStrategy'
+//            }
+
             database {
                 // 数据库类型
                 // org.jooq.meta.[database].[database]Database
@@ -56,6 +60,22 @@ jooq {
                 includes = '.*'
                 // 不包含表名
                 excludes = 'schema_version'
+
+                customTypes {
+                    customType {
+                        name = 'Gender'
+                        type = 'me.jiahuan.java.enums.Gender'
+                        converter = 'me.jiahuan.java.converter.GenderEnumConverter'
+                    }
+                }
+
+                forcedTypes {
+                    forcedType {
+                        name = 'Gender'
+                        expression = 'gender'
+                        types = '.*'
+                    }
+                }
             }
 
             generate {
