@@ -72,7 +72,7 @@ jooq {
                 forcedTypes {
                     forcedType {
                         name = 'Gender'
-                        expression = 'gender'
+                        expression = schema + '\\.(user)\\.gender'
                         types = '.*'
                     }
                 }

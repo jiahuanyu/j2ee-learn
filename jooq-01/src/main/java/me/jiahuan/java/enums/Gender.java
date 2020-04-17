@@ -9,8 +9,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum Gender {
-    FEMALE(0, "女"),
-    MALE(1, "男");
+    FEMALE(10, "女"),
+    MALE(100, "男");
     private Integer code;
     private String desc;
 }

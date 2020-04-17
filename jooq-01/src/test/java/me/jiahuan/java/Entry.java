@@ -40,6 +40,7 @@ public class Entry {
         }
     }
 
+    @Test
     public void testQuery() {
         String userName = "root";
         String password = "root1234";
@@ -49,7 +50,10 @@ public class Entry {
         try {
             connection = DriverManager.getConnection(url, userName, password);
             DSLContext dsl = DSL.using(connection, SQLDialect.MYSQL);
-            List<User> result = dsl.select(Tables.USER.NAME, Tables.USER.UID).from(Tables.USER).fetchInto(User.class);
+            List<User> result = dsl
+                    .select(Tables.USER.UID, Tables.USER.NAME, Tables.USER.GENDER)
+                    .from(Tables.USER)
+                    .fetchInto(User.class);
             for (User user : result) {
                 System.out.println(user);
             }
