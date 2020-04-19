@@ -1,5 +1,4 @@
 rootProject.name = 'j2ee-learn'
-include 'java-web-01'
-include 'jooq-01'
-include 'spring-01'
+include 'java-web-01', 'jooq-01', 'spring-01', 'springmvc-01'
+include 'springmvc-02'
 

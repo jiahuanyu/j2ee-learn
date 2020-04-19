@@ -11,14 +11,20 @@ buildscript {
 
 dependencies {
     compileOnly("javax.servlet:servlet-api:2.5")
-    compile("org.jooq:jooq:3.11.2")
-    compile("org.jooq:jooq-codegen:3.11.2")
-    compile("org.jooq:jooq-meta:3.11.2")
-    compile("javax.validation:validation-api:2.0.1.Final")
-    compile("mysql:mysql-connector-java:8.0.12")
+    implementation("org.jooq:jooq:3.11.2")
+    implementation("org.jooq:jooq-codegen:3.11.2")
+    implementation("org.jooq:jooq-meta:3.11.2")
+    implementation("javax.validation:validation-api:2.0.1.Final")
+    implementation("mysql:mysql-connector-java:8.0.12")
 }
 
 apply plugin: 'nu.studer.jooq'
+
+sourceSets {
+    main {
+        java.srcDir 'gensrc/main/java'
+    }
+}
 
 jooq {
     dependencies {

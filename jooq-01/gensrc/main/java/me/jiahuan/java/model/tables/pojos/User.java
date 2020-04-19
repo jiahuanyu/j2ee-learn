@@ -26,11 +26,11 @@ import me.jiahuan.java.enums.Gender;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class User implements Serializable {
 
-    private static final long serialVersionUID = -1470257458;
+    private static final long serialVersionUID = -949253050;
 
-    private Integer uid;
-    private String  name;
-    private Gender  gender;
+    private Long   uid;
+    private String name;
+    private Gender gender;
 
     public User() {}
 
@@ -41,20 +41,20 @@ public class User implements Serializable {
     }
 
     public User(
-        Integer uid,
-        String  name,
-        Gender  gender
+        Long   uid,
+        String name,
+        Gender gender
     ) {
         this.uid = uid;
         this.name = name;
         this.gender = gender;
     }
 
-    public Integer getUid() {
+    public Long getUid() {
         return this.uid;
     }
 
-    public User setUid(Integer uid) {
+    public User setUid(Long uid) {
         this.uid = uid;
         return this;
     }

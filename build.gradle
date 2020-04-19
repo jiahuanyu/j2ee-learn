@@ -24,14 +24,8 @@ subprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
-    sourceSets {
-        main {
-            java.srcDir 'gensrc/main/java'
-        }
-    }
-
     dependencies {
         compileOnly("org.projectlombok:lombok:1.18.12")
-        testCompile("junit:junit:4.12")
+        testImplementation("junit:junit:4.12")
     }
 }

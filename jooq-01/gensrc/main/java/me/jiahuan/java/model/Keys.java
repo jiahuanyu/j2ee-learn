@@ -32,7 +32,7 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
-    public static final Identity<UserRecord, Integer> IDENTITY_USER = Identities0.IDENTITY_USER;
+    public static final Identity<UserRecord, Long> IDENTITY_USER = Identities0.IDENTITY_USER;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
@@ -50,7 +50,7 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     private static class Identities0 {
-        public static Identity<UserRecord, Integer> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.UID);
+        public static Identity<UserRecord, Long> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.UID);
     }
 
     private static class UniqueKeys0 {

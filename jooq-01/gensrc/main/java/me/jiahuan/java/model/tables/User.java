@@ -43,7 +43,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class User extends TableImpl<UserRecord> {
 
-    private static final long serialVersionUID = -922858206;
+    private static final long serialVersionUID = -511197881;
 
     /**
      * The reference instance of <code>j2ee-learn.user</code>
@@ -61,7 +61,7 @@ public class User extends TableImpl<UserRecord> {
     /**
      * The column <code>j2ee-learn.user.uid</code>.
      */
-    public final TableField<UserRecord, Integer> UID = createField("uid", org.jooq.impl.SQLDataType.INTEGER.nullable(false).identity(true), this, "");
+    public final TableField<UserRecord, Long> UID = createField("uid", org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
      * The column <code>j2ee-learn.user.name</code>.
@@ -126,7 +126,7 @@ public class User extends TableImpl<UserRecord> {
      * {@inheritDoc}
      */
     @Override
-    public Identity<UserRecord, Integer> getIdentity() {
+    public Identity<UserRecord, Long> getIdentity() {
         return Keys.IDENTITY_USER;
     }
 
