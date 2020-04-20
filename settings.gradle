@@ -5,4 +5,5 @@ include 'jooq-01'
 include 'spring-01'
 include 'springmvc-01', 'springmvc-02'
 include 'springboot-01-web-crud'
+include 'springboot-data-jpa-01'
 
