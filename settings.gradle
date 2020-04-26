@@ -6,4 +6,5 @@ include 'spring-sample'
 include 'spring-webmvc-sample'
 include 'spring-boot-web-sample'
 include 'spring-boot-data-jpa-sample'
+include 'spring-boot-es-sample'
 
