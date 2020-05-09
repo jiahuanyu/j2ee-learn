@@ -11,6 +11,7 @@ import lombok.Getter;
 public enum Gender {
     FEMALE(10, "女"),
     MALE(100, "男");
+
     private Integer code;
     private String desc;
 }
