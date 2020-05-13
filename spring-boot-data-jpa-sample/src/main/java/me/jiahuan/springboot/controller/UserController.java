@@ -1,6 +1,6 @@
 package me.jiahuan.springboot.controller;
 
-import me.jiahuan.springboot.entity.User;
+import me.jiahuan.springboot.pojo.User;
 import me.jiahuan.springboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +13,9 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/test")
+    @GetMapping("/user")
     public List<User> findAll() {
-        List<User> users =userRepository.findAll();
-        users.forEach(System.out::println);
+        List<User> users = userRepository.findAll();
         return users;
     }
 }
