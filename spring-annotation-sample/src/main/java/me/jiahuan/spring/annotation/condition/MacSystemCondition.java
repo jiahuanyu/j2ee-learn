@@ -7,6 +7,10 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 public class MacSystemCondition implements Condition {
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-        return true;
+        String system = context.getEnvironment().getProperty("os.name");
+        if (system == null) {
+            return false;
+        }
+        return system.contains("Mac OS");
     }
 }
