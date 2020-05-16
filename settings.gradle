@@ -8,4 +8,5 @@ include 'spring-boot-web-sample'
 include 'spring-boot-data-jpa-sample'
 include 'spring-boot-es-sample'
 include 'spring-annotation-sample'
+include 'spring-boot-coolq-sample'
 
